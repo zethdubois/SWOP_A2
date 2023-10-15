@@ -1,0 +1,706 @@
+@prefix : <http://www.example.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.example.org/ontology#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.example.org/ontology#alumniOf
+:alumniOf rdf:type owl:AnnotationProperty .
+
+
+###  http://www.example.org/ontology#email
+:email rdf:type owl:AnnotationProperty .
+
+
+###  http://www.example.org/ontology#hasName
+:hasName rdf:type owl:AnnotationProperty .
+
+
+###  http://www.example.org/ontology#hasTickerSymbol
+:hasTickerSymbol rdf:type owl:AnnotationProperty .
+
+
+###  http://www.example.org/ontology#jobTitle
+:jobTitle rdf:type owl:AnnotationProperty .
+
+
+###  http://www.example.org/ontology#memberOf
+:memberOf rdf:type owl:AnnotationProperty .
+
+
+###  http://www.example.org/ontology#telephone
+:telephone rdf:type owl:AnnotationProperty .
+
+
+###  http://www.example.org/ontology#worksFor
+:worksFor rdf:type owl:AnnotationProperty .
+
+
+###  https://zethdubois.github.io
+<https://zethdubois.github.io> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasWebProfile
+<http://www.co-ode.org/ontologies/ont.owl#hasWebProfile> rdf:type owl:ObjectProperty ;
+                                                         rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.example.org/ontology#divestsIn
+:divestsIn rdf:type owl:ObjectProperty .
+
+
+###  http://www.example.org/ontology#hasDeveloper
+:hasDeveloper rdf:type owl:ObjectProperty ;
+              rdfs:domain :Cryptocurrency ;
+              rdfs:range :Developer .
+
+
+###  http://www.example.org/ontology#hasExchange
+:hasExchange rdf:type owl:ObjectProperty ;
+             rdfs:domain :Cryptocurrency ;
+             rdfs:range :Exchange .
+
+
+###  http://www.example.org/ontology#hasHistoricalData
+:hasHistoricalData rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Cryptocurrency ;
+                   rdfs:range :HistoricalData .
+
+
+###  http://www.example.org/ontology#hasLiquidity
+:hasLiquidity rdf:type owl:ObjectProperty ;
+              rdfs:domain :Cryptocurrency ;
+              rdfs:range :Liquidity .
+
+
+###  http://www.example.org/ontology#hasMarketCap
+:hasMarketCap rdf:type owl:ObjectProperty ;
+              rdfs:domain :Cryptocurrency ;
+              rdfs:range :MarketCap .
+
+
+###  http://www.example.org/ontology#hasToken
+:hasToken rdf:type owl:ObjectProperty ;
+          rdfs:domain :ICO ;
+          rdfs:range :Token .
+
+
+###  http://www.example.org/ontology#hasTradingVolume
+:hasTradingVolume rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Cryptocurrency ;
+                  rdfs:range :TradingVolume .
+
+
+###  http://www.example.org/ontology#hasUserReview
+:hasUserReview rdf:type owl:ObjectProperty ;
+               rdfs:domain :Cryptocurrency ;
+               rdfs:range :Review .
+
+
+###  http://www.example.org/ontology#hasWallet
+:hasWallet rdf:type owl:ObjectProperty ;
+           rdfs:domain :User ;
+           rdfs:range :Wallet .
+
+
+###  http://www.example.org/ontology#investedIn
+:investedIn rdf:type owl:ObjectProperty ;
+            rdfs:domain :Investor ;
+            rdfs:range :ICO .
+
+
+###  http://www.example.org/ontology#investsIn
+:investsIn rdf:type owl:ObjectProperty .
+
+
+###  http://www.example.org/ontology#isCompetitorOf
+:isCompetitorOf rdf:type owl:ObjectProperty ,
+                         owl:SymmetricProperty .
+
+
+###  http://www.example.org/ontology#isLinkedTo
+:isLinkedTo rdf:type owl:ObjectProperty ;
+            rdfs:domain :Investor ;
+            rdfs:range :Person .
+
+
+###  http://www.example.org/ontology#isOwnedBy
+:isOwnedBy rdf:type owl:ObjectProperty ;
+           owl:inverseOf :owns .
+
+
+###  http://www.example.org/ontology#isPartnerOf
+:isPartnerOf rdf:type owl:ObjectProperty ,
+                      owl:TransitiveProperty .
+
+
+###  http://www.example.org/ontology#launchedBy
+:launchedBy rdf:type owl:ObjectProperty ;
+            rdfs:domain :ICO ;
+            rdfs:range :Token .
+
+
+###  http://www.example.org/ontology#launchedICO
+:launchedICO rdf:type owl:ObjectProperty ;
+             rdfs:domain :Cryptocurrency ;
+             rdfs:range :ICO .
+
+
+###  http://www.example.org/ontology#owns
+:owns rdf:type owl:ObjectProperty .
+
+
+###  http://www.example.org/ontology#relatedToNews
+:relatedToNews rdf:type owl:ObjectProperty ;
+               rdfs:domain :Cryptocurrency ;
+               rdfs:range :NewsArticle .
+
+
+###  http://www.example.org/ontology#tradedInPair
+:tradedInPair rdf:type owl:ObjectProperty ;
+              rdfs:domain :Cryptocurrency ;
+              rdfs:range :MarketPair .
+
+
+###  http://www.example.org/ontology#tradedOnExchange
+:tradedOnExchange rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Cryptocurrency ;
+                  rdfs:range :Exchange .
+
+
+###  http://www.example.org/ontology#usesBlockchain
+:usesBlockchain rdf:type owl:ObjectProperty ;
+                rdfs:domain :Cryptocurrency ;
+                rdfs:range :Blockchain .
+
+
+###  http://www.example.org/ontology#usesEncryption
+:usesEncryption rdf:type owl:ObjectProperty .
+
+
+###  http://www.example.org/ontology#writtenBy
+:writtenBy rdf:type owl:ObjectProperty ;
+           rdfs:domain :Review ;
+           rdfs:range :User .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.example.org/ontology#allTimeHighPrice
+:allTimeHighPrice rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Cryptocurrency ;
+                  rdfs:range xsd:float .
+
+
+###  http://www.example.org/ontology#allTimeLowPrice
+:allTimeLowPrice rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Cryptocurrency ;
+                 rdfs:range xsd:float .
+
+
+###  http://www.example.org/ontology#circulatingSupply
+:circulatingSupply rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Cryptocurrency ;
+                   rdfs:range xsd:float .
+
+
+###  http://www.example.org/ontology#currentPrice
+:currentPrice rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Cryptocurrency ;
+              rdfs:range xsd:float .
+
+
+###  http://www.example.org/ontology#hasRoadmap
+:hasRoadmap rdf:type owl:ObjectProperty ;
+            rdfs:domain :ICO ;
+            rdfs:range xsd:anyURI .
+
+
+###  http://www.example.org/ontology#hasWebsite
+:hasWebsite rdf:type owl:ObjectProperty ;
+            rdfs:domain :ICO ;
+            rdfs:range xsd:anyURI .
+
+
+###  http://www.example.org/ontology#hasWhitepaper
+:hasWhitepaper rdf:type owl:ObjectProperty ;
+               rdfs:domain :ICO ;
+               rdfs:range xsd:anyURI .
+
+
+###  http://www.example.org/ontology#icoEndDate
+:icoEndDate rdf:type owl:DatatypeProperty ;
+            rdfs:domain :ICO ;
+            rdfs:range xsd:date ,
+                       xsd:dateTime .
+
+
+###  http://www.example.org/ontology#icoRaisedAmount
+:icoRaisedAmount rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :ICO ;
+                 rdfs:range xsd:float .
+
+
+###  http://www.example.org/ontology#icoStartDate
+:icoStartDate rdf:type owl:DatatypeProperty ;
+              rdfs:domain :ICO ;
+              rdfs:range xsd:dateTime .
+
+
+###  http://www.example.org/ontology#launchDate
+:launchDate rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Cryptocurrency ;
+            rdfs:range xsd:date .
+
+
+###  http://www.example.org/ontology#marketCapValue
+:marketCapValue rdf:type owl:DatatypeProperty ;
+                rdfs:domain :MarketCap ;
+                rdfs:range xsd:float .
+
+
+###  http://www.example.org/ontology#maxSupply
+:maxSupply rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Cryptocurrency ;
+           rdfs:range xsd:float .
+
+
+###  http://www.example.org/ontology#name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Cryptocurrency ;
+      rdfs:range xsd:string .
+
+
+###  http://www.example.org/ontology#newsDate
+:newsDate rdf:type owl:DatatypeProperty ;
+          rdfs:domain :NewsArticle ;
+          rdfs:range xsd:date .
+
+
+###  http://www.example.org/ontology#newsTitle
+:newsTitle rdf:type owl:DatatypeProperty ;
+           rdfs:domain :NewsArticle ;
+           rdfs:range xsd:string .
+
+
+###  http://www.example.org/ontology#priceChange24h
+:priceChange24h rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Cryptocurrency ;
+                rdfs:range xsd:float .
+
+
+###  http://www.example.org/ontology#priceChangePercentage24h
+:priceChangePercentage24h rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :Cryptocurrency ;
+                          rdfs:range xsd:float .
+
+
+###  http://www.example.org/ontology#reviewRating
+:reviewRating rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Review ;
+              rdfs:range xsd:float .
+
+
+###  http://www.example.org/ontology#reviewText
+:reviewText rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Review ;
+            rdfs:range xsd:string .
+
+
+###  http://www.example.org/ontology#symbol
+:symbol rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Cryptocurrency ;
+        rdfs:range xsd:string .
+
+
+###  http://www.example.org/ontology#totalSupply
+:totalSupply rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Cryptocurrency ;
+             rdfs:range xsd:float .
+
+
+###  http://www.example.org/ontology#volume24h
+:volume24h rdf:type owl:DatatypeProperty ;
+           rdfs:domain :TradingVolume ;
+           rdfs:range xsd:float .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.example.org/ontology#Bank
+:Bank rdf:type owl:Class ;
+      rdfs:subClassOf :FinancialEntity .
+
+
+###  http://www.example.org/ontology#Blockchain
+:Blockchain rdf:type owl:Class .
+
+
+###  http://www.example.org/ontology#Coin
+:Coin rdf:type owl:Class ;
+      rdfs:subClassOf :Cryptocurrency ;
+      owl:disjointWith :ICO .
+
+
+###  http://www.example.org/ontology#Cryptocurrency
+:Cryptocurrency rdf:type owl:Class .
+
+
+###  http://www.example.org/ontology#CryptocurrencyExchange
+:CryptocurrencyExchange rdf:type owl:Class ;
+                        rdfs:subClassOf :FinancialEntity .
+
+
+###  http://www.example.org/ontology#Developer
+:Developer rdf:type owl:Class .
+
+
+###  http://www.example.org/ontology#Exchange
+:Exchange rdf:type owl:Class .
+
+
+###  http://www.example.org/ontology#FinancialEntity
+:FinancialEntity rdf:type owl:Class ;
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:unionOf ( :Bank
+                                                     :CryptocurrencyExchange
+                                                   )
+                                     ] .
+
+
+###  http://www.example.org/ontology#HistoricalData
+:HistoricalData rdf:type owl:Class .
+
+
+###  http://www.example.org/ontology#ICO
+:ICO rdf:type owl:Class ;
+     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                       owl:onProperty :launchedBy ;
+                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                     ] ;
+     rdfs:comment "An Initial Coin Offering (ICO) represents a period in which a new cryptocurrency project sells part of its cryptocurrency tokens to early adopters and enthusiasts in exchange for funding."@en .
+
+
+###  http://www.example.org/ontology#Investor
+:Investor rdf:type owl:Class .
+
+
+###  http://www.example.org/ontology#Liquidity
+:Liquidity rdf:type owl:Class .
+
+
+###  http://www.example.org/ontology#MarketCap
+:MarketCap rdf:type owl:Class .
+
+
+###  http://www.example.org/ontology#MarketPair
+:MarketPair rdf:type owl:Class .
+
+
+###  http://www.example.org/ontology#NewsArticle
+:NewsArticle rdf:type owl:Class .
+
+
+###  http://www.example.org/ontology#Person
+:Person rdf:type owl:Class .
+
+
+###  http://www.example.org/ontology#PopularCryptocurrency
+:PopularCryptocurrency rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Class ;
+                                             owl:oneOf ( :Bitcoin
+                                                         :Ethereum
+                                                         :Litecoin
+                                                       )
+                                           ] .
+
+
+###  http://www.example.org/ontology#Review
+:Review rdf:type owl:Class .
+
+
+###  http://www.example.org/ontology#SecureEncryption
+:SecureEncryption rdf:type owl:Class .
+
+
+###  http://www.example.org/ontology#SecureWallet
+:SecureWallet rdf:type owl:Class ;
+              rdfs:subClassOf :Wallet ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :usesEncryption ;
+                                owl:allValuesFrom :SecureEncryption
+                              ] .
+
+
+###  http://www.example.org/ontology#Token
+:Token rdf:type owl:Class ;
+       rdfs:subClassOf :Cryptocurrency .
+
+
+###  http://www.example.org/ontology#TradingVolume
+:TradingVolume rdf:type owl:Class .
+
+
+###  http://www.example.org/ontology#User
+:User rdf:type owl:Class .
+
+
+###  http://www.example.org/ontology#VerifiedEntity
+:VerifiedEntity rdf:type owl:Class .
+
+
+###  http://www.example.org/ontology#VerifiedExchange
+:VerifiedExchange rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( :CryptocurrencyExchange
+                                                             :VerifiedEntity
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:subClassOf :CryptocurrencyExchange ,
+                                  :VerifiedEntity .
+
+
+###  http://www.example.org/ontology#Wallet
+:Wallet rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.example.org/ontology#AES256Encryption
+:AES256Encryption rdf:type owl:NamedIndividual ,
+                           :SecureEncryption .
+
+
+###  http://www.example.org/ontology#BasicEncryption
+:BasicEncryption rdf:type owl:NamedIndividual .
+
+
+###  http://www.example.org/ontology#Binance
+:Binance rdf:type owl:NamedIndividual ,
+                  :Exchange ;
+         :isPartnerOf :Coinbase .
+
+
+###  http://www.example.org/ontology#Bitcoin
+:Bitcoin rdf:type owl:NamedIndividual ,
+                  :Cryptocurrency ,
+                  :PopularCryptocurrency ;
+         :hasMarketCap :BitcoinMarketCap ;
+         :isCompetitorOf :Ethereum ;
+         :tradedOnExchange :Binance ,
+                           :Coinbase ,
+                           :Kraken ;
+         :hasName "Bitcoin" ;
+         :hasTickerSymbol "BTC" .
+
+
+###  http://www.example.org/ontology#BitcoinMarketCap
+:BitcoinMarketCap rdf:type owl:NamedIndividual ,
+                           :MarketCap .
+
+
+###  http://www.example.org/ontology#BlueWallet
+:BlueWallet rdf:type owl:NamedIndividual ,
+                     :SecureWallet ;
+            :usesEncryption :AES256Encryption .
+
+
+###  http://www.example.org/ontology#CoinBaseWallet
+:CoinBaseWallet rdf:type owl:NamedIndividual ,
+                         :SecureWallet ;
+                :usesEncryption :BasicEncryption .
+
+
+###  http://www.example.org/ontology#Coinbase
+:Coinbase rdf:type owl:NamedIndividual ,
+                   :Exchange .
+
+
+###  http://www.example.org/ontology#Doge
+:Doge rdf:type owl:NamedIndividual ,
+               :Cryptocurrency ;
+      :hasMarketCap :DogeMarketCap ;
+      :hasName "Dogecoin" ;
+      :hasTickerSymbol "DOGE" .
+
+
+###  http://www.example.org/ontology#DogeMarketCap
+:DogeMarketCap rdf:type owl:NamedIndividual ,
+                        :MarketCap .
+
+
+###  http://www.example.org/ontology#Ethereum
+:Ethereum rdf:type owl:NamedIndividual ,
+                   :Cryptocurrency ,
+                   :PopularCryptocurrency ;
+          :hasMarketCap :EthereumMarketCap ;
+          :tradedOnExchange :Binance ,
+                            :Coinbase ;
+          :hasName "Ethereum" ;
+          :hasTickerSymbol "ETH" .
+
+
+###  http://www.example.org/ontology#EthereumMarketCap
+:EthereumMarketCap rdf:type owl:NamedIndividual ,
+                            :MarketCap .
+
+
+###  http://www.example.org/ontology#FoxToken
+:FoxToken rdf:type owl:NamedIndividual ,
+                   :Cryptocurrency ,
+                   :Token ;
+          :hasMarketCap :FoxTokenMarketCap ;
+          :hasName "Fox Token" ;
+          :hasTickerSymbol "FOX" .
+
+
+###  http://www.example.org/ontology#FoxTokenICO
+:FoxTokenICO rdf:type owl:NamedIndividual ,
+                      :ICO ;
+             :launchedBy :FoxToken ;
+             :icoStartDate "2018-01-01T00:00:00"^^xsd:dateTime ;
+             :hasRoadmap <http://www.foxtoken.com/roadmap.pdf> ;
+             :hasWebsite <http://www.foxtoken.com> ;
+             :hasWhitepaper <http://www.foxtoken.com/whitepaper.pdf> .
+
+
+###  http://www.example.org/ontology#FoxTokenMarketCap
+:FoxTokenMarketCap rdf:type owl:NamedIndividual ,
+                            :MarketCap .
+
+
+###  http://www.example.org/ontology#Investor1
+:Investor1 rdf:type owl:NamedIndividual ,
+                    :Investor ;
+           :investedIn :FoxTokenICO ;
+           :investsIn :Doge ;
+           :isLinkedTo :JohnDoe .
+
+
+###  http://www.example.org/ontology#JohnDoe
+:JohnDoe rdf:type owl:NamedIndividual ,
+                  :Person ;
+         :owns :CoinBaseWallet ;
+         :name "John Doe" ;
+         :alumniOf :XYZUniversity ;
+         :email "johndoe@example.com" ;
+         :jobTitle "Research Scientist" ;
+         :memberOf :NationalScienceAssociation ,
+                   :SocietyForCreativeAnachronisms ;
+         :telephone "+1-123-456-7890" ;
+         :worksFor :DEFInstitute .
+
+
+###  http://www.example.org/ontology#Kraken
+:Kraken rdf:type owl:NamedIndividual ,
+                 :Exchange .
+
+
+###  http://www.example.org/ontology#Litecoin
+:Litecoin rdf:type owl:NamedIndividual ,
+                   :Cryptocurrency ,
+                   :PopularCryptocurrency ;
+          :hasMarketCap :LitecoinMarketCap ;
+          :hasName "Litecoin" ;
+          :hasTickerSymbol "LTC" .
+
+
+###  http://www.example.org/ontology#LitecoinMarketCap
+:LitecoinMarketCap rdf:type owl:NamedIndividual ,
+                            :MarketCap .
+
+
+###  http://www.example.org/ontology#Monero
+:Monero rdf:type owl:NamedIndividual ,
+                 :Cryptocurrency ;
+        :hasMarketCap :MoneroMarketCap ;
+        :hasName "Monero" ;
+        :hasTickerSymbol "XMR" .
+
+
+###  http://www.example.org/ontology#MoneroMarketCap
+:MoneroMarketCap rdf:type owl:NamedIndividual ,
+                          :MarketCap .
+
+
+###  http://www.example.org/ontology#Stellar
+:Stellar rdf:type owl:NamedIndividual ,
+                  :Cryptocurrency ;
+         :hasMarketCap :StellarMarketCap ;
+         :hasName "Stellar" ;
+         :hasTickerSymbol "XLM" .
+
+
+###  http://www.example.org/ontology#StellarICO
+:StellarICO rdf:type owl:NamedIndividual ,
+                     :ICO ;
+            :launchedBy :StellarToken ;
+            :icoStartDate "2014-07-31T00:00:00"^^xsd:dateTime ;
+            :hasRoadmap <http://www.stellarico.com/roadmap.pdf> ;
+            :hasWebsite <http://www.stellarico.com> ;
+            :hasWhitepaper <http://www.stellarico.com/whitepaper.pdf> .
+
+
+###  http://www.example.org/ontology#StellarMarketCap
+:StellarMarketCap rdf:type owl:NamedIndividual ,
+                           :MarketCap .
+
+
+###  http://www.example.org/ontology#StellarToken
+:StellarToken rdf:type owl:NamedIndividual ,
+                       :Token ;
+              :hasName "Stellar Token" ;
+              :hasTickerSymbol "XLM" .
+
+
+###  http://www.example.org/ontology#ZCash
+:ZCash rdf:type owl:NamedIndividual ,
+                :Cryptocurrency ;
+       :hasMarketCap :ZCashMarketCap ;
+       :hasName "ZCash" ;
+       :hasTickerSymbol "ZEC" .
+
+
+###  http://www.example.org/ontology#ZCashMarketCap
+:ZCashMarketCap rdf:type owl:NamedIndividual ,
+                         :MarketCap .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:hasWebProfile <https://zethdubois.github.io>  .
+
+
+:hasWhitepaper rdfs:comment "The URL of the whitepaper of the ICO, which typically contains detailed information about the project."@en .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
